@@ -1,0 +1,26 @@
+#Program to search for a student by name in the binary file.
+#Importing required library
+import pickle
+
+#Creating the file and writing in it
+f=open('Student.bin','wb')
+name=['Jhon','Jane','Matt','Woods','Sam']
+roll_no=[1,2,3,4,5]
+for i in range (2):
+    pickle.dump((name[i],roll_no[i]),f)
+f.close()
+
+#Creating the search function
+def search(name):
+    f=open('Student.bin','rb')
+    while True:
+        try:
+            name1,roll_no=pickle.load(f)
+            if name1==name:
+                return roll_no,name
+        except EOFError:
+            break
+    return none
+
+#Searching for the name 'Jhon'
+print(search('Jhon'))

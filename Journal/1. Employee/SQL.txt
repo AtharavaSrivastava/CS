@@ -1,0 +1,18 @@
+create database emp;
+
+create table Employee
+(Emp_id varchar(10) Primary key,
+Name varchar(50),
+Age int,
+Department varchar(50),
+Salary int);
+
+insert into employee values
+(1, 'Alice', 30, 'HR', 60000);
+(2, 'Bob', 25, 'IT', 55000);
+(3, 'Charlie', 35, 'Finance', 80000);
+(4, 'David', 28, 'IT', 65000);
+(5, 'Eve', 40, 'HR', 90000);
+
+alter table employee add 
+Gender Varchar(5);

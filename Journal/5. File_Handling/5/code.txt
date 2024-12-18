@@ -1,0 +1,47 @@
+#Program to read a text file and display the number of vowels,consonant,uppercase,lowercase and characters in the file
+#Creating the 1st text file and writing in it
+f=open('text.txt','w')
+l1='The quick brown fox jumps over the lazy dog\n'
+l2='The five boxing wizards jump quickly\n'
+l3='Six big devils from Japan quickly forgot how to waltz\n'
+l4='This line is the fourth line\n'
+l5='This line is the fifth line\n'
+l6='a'
+f.writelines([l1,l2,l3,l4,l5,l6])
+f.close()
+
+#Reopening the file and converting it into a string
+f=open('text.txt','r')
+lines=f.readlines()
+string=''.join(lines)
+
+#Counting the vowels and the consonants
+vowels = ['a','e','i','o','u','A','E','I','O','U']
+vowels_count=0
+consonants_count=0
+
+for i in string:
+    if i in vowels :
+        vowels_count +=1
+    elif i !=' ' :
+        consonants_count+=1
+
+#Counting the uppercase and lowercase characters
+Uppercase_count = 0
+Lowercase_count = 0
+new_string = ''
+
+for i in string :
+    if (i.isupper()) == 1:
+        Uppercase_count+=1
+        new_string+=(i.lower())
+    elif (i.islower()) == 1:
+        Lowercase_count+=1
+        new_string+=(i.upper())
+
+
+#Displaying the required output
+print(f'There are {vowels_count} vowels in the string.')
+print(f'There are {consonants_count} consonants in the string.')
+print(f'There are {Uppercase_count} uppercase characters in the string.')
+print(f'There are {Lowercase_count} lowercase characters in the string.')
