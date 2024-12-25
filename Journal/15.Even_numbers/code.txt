@@ -4,9 +4,8 @@ num=input('Please enter the numbers separated by space: ')
 
 def even_numbers(numbers):
     global num
-    l=num.split(' ')
     even_numbers=[]
-    for i in l:
+    for i in num.split(' '):
         if int(i)%2==0:
             even_numbers.append(int(i))
 
